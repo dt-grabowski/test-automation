@@ -3,6 +3,8 @@ from SeleniumLibrary import SeleniumLibrary
 from SeleniumLibrary.keywords import ElementKeywords, BrowserManagementKeywords, WaitingKeywords, FormElementKeywords, SelectElementKeywords
 from robot.api.deco import keyword
 from Variables import page_elements as pe
+from robot.api import Failure
+
 
 class Library(LibraryComponent):
     def __init__(self: "Library", ctx: SeleniumLibrary):
@@ -42,6 +44,25 @@ class Library(LibraryComponent):
     def select_radio_buttons(self, radio_buttons_locators: list, values: list):
         for i in range(len(radio_buttons_locators)):
             self.fek.select_radio_button(group_name=values[i], value=values[i])
+
+
+
+    @keyword
+    def text_from_locators_is_equal(self, expected_value: str, *locators):
+        text = []
+        for i in locators:
+            text.append(self.ek.get_text(i))
+
+        value = ""
+        for i in text:
+            value = value + i
+        print(value)
+        print(expected_value)
+
+        if value != expected_value:
+            raise Failure("Wrong value")
+
+
 
 
 

@@ -3,6 +3,13 @@
 url = "https://www.automationexercise.com/"
 page_body = "//body"
 
+logged_as = "/html/body/header/div/div/div/div[2]/div/ul/li[10]/a/text()"
+logged_as_user = "/html/body/header/div/div/div/div[2]/div/ul/li[10]/a/b"
+
+
+
+
+
     #BUTTONS
 signup_login_button = "//a[@href = '/login']"
 
@@ -10,14 +17,21 @@ signup_login_button = "//a[@href = '/login']"
 
     # ELEMENTS:
 new_user_signup_form = "//div[@class = 'signup-form']/h2"
+login_to_your_account_form = "//div[@class = 'login-form']/h2"
 
     # FIELDS:
-name_field = "//input[@name = 'name']"
+user_field = "//input[@name = 'name']"
 email_field = "//input[@data-qa= 'signup-email']"
-name_and_email_locators = [name_field, email_field]
+user_and_email_locators = [user_field, email_field]
+
+login_user_field = "//input[@data-qa = 'login-email']"
+login_email_field = "//input[@data-qa = 'login-password']"
+
+login_user_email_locators = [login_user_field, login_email_field]
 
     #BUTTONS:
 signup_button = "//button[@data-qa='signup-button']"
+login_button = "//button[@data-qa = 'login-button']"
 
 
 # -------------------------SIGNUP PAGE-----------------------------------
@@ -59,8 +73,8 @@ newsletter_checkboxes = ["//input[@name = 'newsletter']",
 account_created_element = "//h2[@data-qa = 'account-created']"
 
 
+#--------------------LOGGED--------------------------------------------
 
 
-
-
+logged_us_locator = "//*[@id='header']/div/div/div/div[2]/div/ul/li[10]/a"
 

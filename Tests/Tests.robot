@@ -6,11 +6,11 @@ Variables       ../Variables/page_elements.py
 
 *** Test Cases ***
 
-User
+Register user
     OpenBrowser     ${url}      ${browser}
     ClickElement      ${signup_login_button}
     ElementIsVisibleAndContainText      ${new_user_signup_form}      New User Signup!
-    TypeTextIntoField       ${name_and_email_locators}      ${name_and_email}
+    TypeTextIntoField       ${user_and_email_locators}      ${user_and_email}
     ClickElement      ${signup_button}
     ElementIsVisibleAndContainText      ${enter_account_information}        ENTER ACCOUNT INFORMATION
     SelectRadioButton       title       ${title}
@@ -22,6 +22,17 @@ User
     ClickElement    ${create_account_button}
     ElementIsVisibleAndContainText       ${account_created_element}      ACCOUNT CREATED!
     CloseBrowser
+Login user with correct email and password
+    OpenBrowser     ${url}      ${browser}
+    ClickElement      ${signup_login_button}
+    ElementIsVisibleAndContainText      ${login_to_your_account_form}       Login to your account
+    TypeTextIntoField       ${login_user_email_locators}        ${correct_email_password}
+    ClickElement        ${login_button}
+    TextFromLocatorsIsEqual      Logged in as dtg190     ${logged_us_locator}
+    CloseBrowser
+
+
+
 
 
 
