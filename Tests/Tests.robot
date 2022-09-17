@@ -47,6 +47,16 @@ LogoutUser
     ClickElement    ${loggout_button}
     LocationShouldBe    https://www.automationexercise.com/login
     CloseBrowser
+RegisterUserWithExistingEmail
+    OpenBrowser     ${url}      ${browser}
+    ClickElement      ${signup_login_button}
+    ElementIsVisibleAndContainText      ${new_user_signup_form}      New User Signup!
+    TypeTextIntoField       ${user_and_email_locators}      ${existing_name_and_email}
+    ClickElement    ${signup_button}
+    ElementIsVisibleAndContainText      ${email_address_exist}      Email Address already exist!
+    CloseBrowser
+
+
 
 
 

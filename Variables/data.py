@@ -46,6 +46,13 @@ incorrect_password = "***23sd@dwww"
 
 incorrect_user_email = [incorrect_email, incorrect_password]
 
+#existing name and email
+
+existing_name_and_email = [user, email]
+
+
+
+
 
 
 

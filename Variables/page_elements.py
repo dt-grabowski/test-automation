@@ -19,6 +19,7 @@ signup_login_button = "//a[@href = '/login']"
 new_user_signup_form = "//div[@class = 'signup-form']/h2"
 login_to_your_account_form = "//div[@class = 'login-form']/h2"
 incorect_email_password = "//form[@action = '/login']/p"
+email_address_exist = "//form[@action = '/signup']/p"
 
     # FIELDS:
 user_field = "//input[@name = 'name']"
