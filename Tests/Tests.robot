@@ -6,7 +6,7 @@ Variables       ../Variables/page_elements.py
 
 *** Test Cases ***
 
-Register user
+RegisterUser
     OpenBrowser     ${url}      ${browser}
     ClickElement      ${signup_login_button}
     ElementIsVisibleAndContainText      ${new_user_signup_form}      New User Signup!
@@ -22,7 +22,7 @@ Register user
     ClickElement    ${create_account_button}
     ElementIsVisibleAndContainText       ${account_created_element}      ACCOUNT CREATED!
     CloseBrowser
-Login user with correct email and password
+LoginuserWithCorrectEmailAndPassword
     OpenBrowser     ${url}      ${browser}
     ClickElement      ${signup_login_button}
     ElementIsVisibleAndContainText      ${login_to_your_account_form}       Login to your account
@@ -31,6 +31,13 @@ Login user with correct email and password
     TextFromLocatorsIsEqual      Logged in as dtg190     ${logged_us_locator}
     CloseBrowser
 
+LoginUserWithIncorrectEmailAndPassword
+    OpenBrowser     ${url}      ${browser}
+    ClickElement      ${signup_login_button}
+    TypeTextIntoField       ${login_user_email_locators}        ${incorrect_user_email}
+    ClickElement        ${login_button}
+    ElementIsVisibleAndContainText      ${incorect_email_password}      Your email or password is incorrect!
+    CloseBrowser
 
 
 

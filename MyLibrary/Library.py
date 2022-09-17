@@ -2,9 +2,8 @@ from SeleniumLibrary.base.librarycomponent import LibraryComponent
 from SeleniumLibrary import SeleniumLibrary
 from SeleniumLibrary.keywords import ElementKeywords, BrowserManagementKeywords, WaitingKeywords, FormElementKeywords, SelectElementKeywords
 from robot.api.deco import keyword
-from Variables import page_elements as pe
 from robot.api import Failure
-
+from Variables import page_elements as pe
 
 class Library(LibraryComponent):
     def __init__(self: "Library", ctx: SeleniumLibrary):
@@ -61,6 +60,7 @@ class Library(LibraryComponent):
 
         if value != expected_value:
             raise Failure("Wrong value")
+
 
 
 
