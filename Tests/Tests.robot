@@ -30,7 +30,6 @@ LoginuserWithCorrectEmailAndPassword
     ClickElement        ${login_button}
     TextFromLocatorsIsEqual      Logged in as dtg190     ${logged_us_locator}
     CloseBrowser
-
 LoginUserWithIncorrectEmailAndPassword
     OpenBrowser     ${url}      ${browser}
     ClickElement      ${signup_login_button}
@@ -38,6 +37,19 @@ LoginUserWithIncorrectEmailAndPassword
     ClickElement        ${login_button}
     ElementIsVisibleAndContainText      ${incorect_email_password}      Your email or password is incorrect!
     CloseBrowser
+LogoutUser
+    OpenBrowser     ${url}      ${browser}
+    ClickElement      ${signup_login_button}
+    ElementIsVisibleAndContainText      ${login_to_your_account_form}       Login to your account
+    TypeTextIntoField       ${login_user_email_locators}        ${correct_email_password}
+    ClickElement        ${login_button}
+    TextFromLocatorsIsEqual      Logged in as dtg190     ${logged_us_locator}
+    ClickElement    ${loggout_button}
+    LocationShouldBe    https://www.automationexercise.com/login
+    CloseBrowser
+
+
+
 
 
 

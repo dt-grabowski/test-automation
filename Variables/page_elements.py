@@ -78,4 +78,4 @@ account_created_element = "//h2[@data-qa = 'account-created']"
 
 
 logged_us_locator = "//*[@id='header']/div/div/div/div[2]/div/ul/li[10]/a"
-
+loggout_button = "//a[@href = '/logout']"
